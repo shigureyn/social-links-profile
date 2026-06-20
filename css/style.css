@@ -15,6 +15,9 @@
   --color-attribution-link: hsl(228, 45%, 44%);
   --font-main: "Inter", sans-serif;
   --font-size-body: 0.875rem;
+  --space-xs: 0.25rem;
+  --space-md: clamp(1rem, 4vw, 1.5rem);
+  --space-lg: clamp(1.5rem, 5vw, 2.5rem);
 }
 
 *,
@@ -74,13 +77,13 @@ a:focus-visible {
   display: flex;
   justify-content: center;
   align-items: center;
-   padding: clamp(1.5rem, 5vw, 2rem);
+  padding: clamp(1.5rem, 5vw, 2rem);
 }
 
 .profile-card {
   width: 100%;
   max-inline-size: 24rem;
-  padding: clamp(1.5rem, 5vw, 2.5rem);
+  padding: var(--space-lg);
   border-radius: 0.75rem;
   text-align: center;
   background-color: var(--color-grey-800);
@@ -94,11 +97,11 @@ a:focus-visible {
   block-size: 5.5rem;
   border-radius: 50%;
   object-fit: cover;
-  margin-block-end: 1.5rem;
+  margin-block-end: var(--space-md);
 }
 
 .profile-card__name {
-  margin-block-end: 0.25rem;
+  margin-block-end: var(--space-xs);
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.2;
@@ -106,13 +109,13 @@ a:focus-visible {
 }
 
 .profile-card__location {
-  margin-block-end: 1.5rem;
+   margin-block-end: var(--space-md);
   font-weight: 600;
   color: var(--color-green);
 }
 
 .profile-card__description {
-  margin-block-end: 1.5rem;
+  margin-block-end: var(--space-md);
   font-weight: 400;
 }
 
