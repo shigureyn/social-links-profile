@@ -97,6 +97,7 @@ I also learned how to respect users who prefer reduced motion by adding transiti
     transition: background-color 0.2s ease, color 0.2s ease;
   }
 }
+```
 
 ### Continued development
 
