@@ -21,6 +21,7 @@
   --font-size-name: clamp(1.375rem, 4vw, 1.5rem);
   --space-link-block: clamp(0.625rem, 2vw, 0.75rem);
   --space-link-inline: clamp(0.875rem, 3vw, 1rem);
+  --font-size-attribution: clamp(0.75rem, 1vw, 0.8125rem);
 }
 
 *,
@@ -149,16 +150,8 @@ a:focus-visible {
   color: var(--color-grey-900);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .profile-card__link {
-    transition:
-      background-color 0.2s ease,
-      color 0.2s ease;
-  }
-}
-
 .attribution {
-  font-size: 0.6875rem;
+  font-size: var(--font-size-attribution);
   text-align: center;
 }
 .attribution-link {
