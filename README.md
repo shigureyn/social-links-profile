@@ -46,6 +46,8 @@ Users should be able to:
 * Mobile-first workflow
 * Local `@font-face` font loading
 * BEM-style class naming
+* Accessible focus states
+* Reduced motion support
 
 ### What I learned
 
@@ -54,11 +56,13 @@ While working on this project, I practiced building a small profile card compone
 I learned how to structure a list of social links using `ul`, `li`, and `a` elements instead of using only `div` elements:
 
 ```html
-<ul class="profile-card__links" aria-label="Social links">
-  <li class="profile-card__item">
-    <a href="#" class="profile-card__link">GitHub</a>
-  </li>
-</ul>
+<nav class="profile-card__social" aria-label="Social links">
+  <ul class="profile-card__links">
+    <li class="profile-card__item">
+      <a href="#" class="profile-card__link">GitHub</a>
+    </li>
+  </ul>
+</nav>
 ```
 
 I also practiced loading a local variable font with `@font-face`:
@@ -84,6 +88,15 @@ Another important part was centering the card on the page with Flexbox:
   padding: 1.5rem;
 }
 ```
+
+I also learned how to respect users who prefer reduced motion by adding transitions only when motion is allowed:
+
+```css
+@media (prefers-reduced-motion: no-preference) {
+  .profile-card__link {
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+}
 
 ### Continued development
 

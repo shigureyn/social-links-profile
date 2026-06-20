@@ -12,6 +12,7 @@
   --color-grey-700: hsl(0, 0%, 20%);
   --color-grey-800: hsl(0, 0%, 12%);
   --color-grey-900: hsl(0, 0%, 8%);
+  --color-attribution-link: hsl(228, 45%, 44%);
   --font-main: "Inter", sans-serif;
   --font-size-body: 0.875rem;
 }
@@ -73,13 +74,13 @@ a:focus-visible {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1.5rem;
+   padding: clamp(1.5rem, 5vw, 2rem);
 }
 
 .profile-card {
   width: 100%;
   max-inline-size: 24rem;
-  padding: 1.5rem;
+  padding: clamp(1.5rem, 5vw, 2.5rem);
   border-radius: 0.75rem;
   text-align: center;
   background-color: var(--color-grey-800);
@@ -115,6 +116,10 @@ a:focus-visible {
   font-weight: 400;
 }
 
+.profile-card__social {
+  inline-size: 100%;
+}
+
 .profile-card__links {
   inline-size: 100%;
   display: flex;
@@ -130,7 +135,6 @@ a:focus-visible {
   text-align: center;
   background-color: var(--color-grey-700);
   color: var(--color-white);
-  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .profile-card__link:hover,
@@ -139,9 +143,11 @@ a:focus-visible {
   color: var(--color-grey-900);
 }
 
-@media (min-width: 48rem) {
-  .profile-card {
-    padding: 2.5rem;
+@media (prefers-reduced-motion: no-preference) {
+  .profile-card__link {
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
   }
 }
 
@@ -150,5 +156,5 @@ a:focus-visible {
   text-align: center;
 }
 .attribution-link {
-  color: hsl(228, 45%, 44%);
+  color: var(--color-attribution-link);
 }
